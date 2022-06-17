@@ -6,10 +6,10 @@ tap:
   devNamespace: tap-dev
 
   domains:
-    learningCenter: learningcenter.y-compiles.com
-    knative: apps.y-compiles.com
+    learningCenter: learningcenter.jkcloudmesh.com
+    knative: apps.jkcloudmesh.com
 
-domain: y-compiles.com
+domain: jkcloudmesh.com
 tls:
   secretName: tls
   namespace: tanzu-system-ingress

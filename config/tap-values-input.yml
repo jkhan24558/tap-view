@@ -8,11 +8,11 @@ tap:
   catalogs: []
 
   registry:
-    host: tapbuild.azurecr.io
+    host: jkhantapcr.azurecr.io
     repositories:
       buildService: repo/build-service
       ootbSupplyChain: repo/supply-chain
 
   domains:
-    main: y-compiles.com
-    tapGui: tap-gui.y-compiles.com
+    main: jkcloudmesh.com
+    tapGui: tap-gui.jkcloudmesh.com

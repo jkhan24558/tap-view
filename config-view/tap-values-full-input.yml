@@ -6,13 +6,13 @@ tap:
   devNamespace: tap-dev
 
   domains:
-    learningCenter: learningcenter.y-compiles.com
-    knative: apps.y-compiles.com
+    learningCenter: learningcenter.jkcloudmesh.com
+    knative: apps.jkcloudmesh.com
     appliveview:
-          host: appliveview.y-compiles.com
+          host: appliveview.jkcloudmesh.com
           port: 443
 
-domain: y-compiles.com
+domain: jkcloudmesh.com
 tls:
   secretName: tls
   namespace: tanzu-system-ingress
