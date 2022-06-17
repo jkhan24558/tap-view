@@ -1,0 +1,102 @@
+{
+    "apiVersion": "kappctrl.k14s.io/v1alpha1",
+    "kind": "App",
+    "metadata": {
+        "annotations": {
+            "kapp.k14s.io/change-group": "tap-install-gitops/app",
+            "kapp.k14s.io/change-rule": "upsert after upserting tap-install-gitops/rbac",
+            "kapp.k14s.io/identity": "v1;tap-install-gitops/kappctrl.k14s.io/App/tap-install-gitops;kappctrl.k14s.io/v1alpha1",
+            "kapp.k14s.io/original": "{\"apiVersion\":\"kappctrl.k14s.io/v1alpha1\",\"kind\":\"App\",\"metadata\":{\"annotations\":{\"kapp.k14s.io/change-group\":\"tap-install-gitops/app\",\"kapp.k14s.io/change-rule\":\"upsert after upserting tap-install-gitops/rbac\"},\"labels\":{\"kapp.k14s.io/app\":\"1655484221762041000\",\"kapp.k14s.io/association\":\"v1.b314b5e0e128192ec878f942b7d699fb\"},\"name\":\"tap-install-gitops\",\"namespace\":\"tap-install-gitops\"},\"spec\":{\"deploy\":[{\"kapp\":{}}],\"fetch\":[{\"git\":{\"ref\":\"origin/main\",\"secretRef\":{\"name\":\"tap-install-gitops-github\"},\"url\":\"https://github.com/jkhan24558/tap-view\"}}],\"serviceAccountName\":\"tap-install-gitops-sa\",\"template\":[{\"ytt\":{\"paths\":[\"config\",\"config-view\",\"config-proxy\"],\"valuesFrom\":[{\"configMapRef\":{\"name\":\"tap-install-gitops\"}},{\"secretRef\":{\"name\":\"tap-install-gitops\"}}]}}]}}",
+            "kapp.k14s.io/original-diff-md5": "58e0494c51d30eb3494f7c9198986bb9"
+        },
+        "creationTimestamp": "2022-06-17T17:03:11Z",
+        "deletionGracePeriodSeconds": 0,
+        "deletionTimestamp": "2022-06-17T21:30:54Z",
+        "finalizers": [
+            "finalizers.kapp-ctrl.k14s.io/delete"
+        ],
+        "generation": 3,
+        "labels": {
+            "kapp.k14s.io/app": "1655484221762041000",
+            "kapp.k14s.io/association": "v1.b314b5e0e128192ec878f942b7d699fb"
+        },
+        "name": "tap-install-gitops",
+        "namespace": "tap-install-gitops",
+        "resourceVersion": "623084",
+        "uid": "26511522-975a-45d0-a37e-9527bda8694a"
+    },
+    "spec": {
+        "deploy": [
+            {
+                "kapp": {}
+            }
+        ],
+        "fetch": [
+            {
+                "git": {
+                    "ref": "origin/main",
+                    "secretRef": {
+                        "name": "tap-install-gitops-github"
+                    },
+                    "url": "https://github.com/jkhan24558/tap-view"
+                }
+            }
+        ],
+        "serviceAccountName": "tap-install-gitops-sa",
+        "template": [
+            {
+                "ytt": {
+                    "paths": [
+                        "config",
+                        "config-view",
+                        "config-proxy"
+                    ],
+                    "valuesFrom": [
+                        {
+                            "configMapRef": {
+                                "name": "tap-install-gitops"
+                            }
+                        },
+                        {
+                            "secretRef": {
+                                "name": "tap-install-gitops"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "message": "Preparing kapp: Getting service account: serviceaccounts \"tap-install-gitops-sa\" not found",
+                "status": "True",
+                "type": "DeleteFailed"
+            }
+        ],
+        "consecutiveReconcileFailures": 21376,
+        "deploy": {
+            "error": "Deploying: Error (see .status.usefulErrorMessage for details)",
+            "exitCode": 1,
+            "finished": true,
+            "startedAt": "2022-06-17T22:26:25Z",
+            "stderr": "kapp: Error: Expected to find kind 'projectcontour.io/v1/TLSCertificateDelegation', but did not:\n- Kubernetes API server did not have matching apiVersion + kind\n- No matching CRD was found in given configuration",
+            "stdout": "Target cluster 'https://10.100.0.1:443' (nodes: ip-192-168-24-196.us-west-2.compute.internal, 5+)",
+            "updatedAt": "2022-06-17T21:30:48Z"
+        },
+        "fetch": {
+            "error": "Fetching: secrets \"tap-install-gitops-github\" not found",
+            "exitCode": -1,
+            "startedAt": "2022-06-17T21:30:54Z",
+            "updatedAt": "2022-06-17T21:30:54Z"
+        },
+        "friendlyDescription": "Delete failed: Preparing kapp: Getting service account: serviceaccounts \"tap-install-gitops-sa\" not found",
+        "observedGeneration": 3,
+        "template": {
+            "exitCode": 0,
+            "updatedAt": "2022-06-17T21:30:48Z"
+        },
+        "usefulErrorMessage": "Preparing kapp: Getting service account: serviceaccounts \"tap-install-gitops-sa\" not found"
+    }
+}
